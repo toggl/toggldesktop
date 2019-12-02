@@ -2,7 +2,7 @@
   <a href="https://toggl.com"><img src="https://toggl.com/site/images/media-toolkit/logo_02-644bd26148b73c19d9c91e5baecd8e31.jpg" alt="Toggl" width="200"></a>
 </h1>
 
-<h4 align="center">Public web page for native desktop applications for the leading time tracking tool <a href="https://toggl.com" target="_blank">Toggl</a>.</h4>
+<h4 align="center">Public web page for native desktop applications of the leading time tracking tool <a href="https://toggl.com" target="_blank">Toggl</a>.</h4>
 
 # About
 
