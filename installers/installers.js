@@ -25,7 +25,7 @@ function load(){
         findRedirect(hash);
       }
     } else {
-      msg = "<pre>Unknown path url: <b>" + window.location.href + "</b></pre>";
+      msg = "<pre><b>Unknown path</b><br/>Url: <i>" + window.location.href + "</i><br/>Path: <i>" + location + "</i> </pre>";
       showMessage(msg);
     }
   } catch (e) {
