@@ -1,3 +1,6 @@
+var os = ["mac", "win", "linux"],
+ downloadUrl = "https://github.com/toggl-open-source/toggldesktop/releases/download/v";
+
 var loadImg = function(tab) {
   var imgs = tab.querySelectorAll("img");
   for (var i = imgs.length - 1; i >= 0; i--) {
@@ -20,7 +23,6 @@ var showOs = function(os) {
   if (!tab) {
     return;
   }
-  loadImg(tab);
   if (!!document.querySelector(".pages .active")) {
     document.querySelector(".pages .active").classList.remove("active");
   }
@@ -52,11 +54,94 @@ var detectHash = function(hash) {
     showOs(window.location.hash.substr(1));
   } else {
     detectOs();  
-  }  
+  }
+}
+
+var generateChangelog = function() {
+  for (var i = 0; i < os.length; i++) {
+    readJSON(os[i]);
+  }
+}
+
+var fillChangelog = function(os, json) {
+  var div = document.querySelector(".os." + os),
+    html = "",
+    item,
+    img;
+
+  for (var i = 0; i < json.versions.length; i++) {
+    item = json.versions[i];
+    html += 
+      '<div class="version">' +
+      '  <h3>' +
+      '    <a id="mac-' + item.version.replace('.','-') +'" class="anchor" href="#mac/' + item.version + '" aria-hidden="true">' +
+      '      <span class="octicon octicon-link">' + item.version + '</span>' +
+      '    </a>';
+
+    // if changelog is beta add label
+    if (!!item.beta) {
+      html += 
+      '    <span class="beta"></span>';
+    }
+
+    html += 
+      '    <a class="download-link" href="' + downloadUrl + item.version + '/TogglDesktop-' + item.version.replace('.','_') + '.dmg" title="Download ' + os + ' version ' + item.version + '">download</a>' +
+      '    <span class="date">' + item.date + '</span>' +
+      '  </h3>' +
+      '  <ul>';
+
+    for (var j = 0; j < item.rows.length; j++) {
+      html += '<li>' + item.rows[j] + '</li>';
+    }
+
+    html +=
+      '  </ul>';
+
+    // if changelog has screenshots add them
+    if (!!item.screenshots) {
+      html += '<div class="screenshots">';
+      for (var j = 0; j < item.screenshots.length; j++) {
+        img = item.screenshots[j];
+        html +=
+          '<p>' + img.text + '</p>' +
+          '<img data-src="' + img.img + '"/>' +
+          '</br>' +
+          '</br>';
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
+  div.innerHTML = html;
+
+  loadImg(div);
+}
+
+function readJSON(os) {
+    var xhr = new XMLHttpRequest(),
+      json;
+    xhr.open('GET', "data/" + os + ".json", true);
+    xhr.responseType = 'blob';
+    xhr.onload = function(e) { 
+      if (this.status == 200) {
+          var file = new File([this.response], 'temp');
+          var fileReader = new FileReader();
+          fileReader.addEventListener('load', function(){
+               json = JSON.parse(fileReader.result);
+               fillChangelog(os, json);
+          });
+          fileReader.readAsText(file);
+      } else {
+        showError()
+      }
+    }
+    xhr.send();
 }
 
 window.onload = function(){ 
   detectHash(window.location.hash)
+  generateChangelog();
 }
 
 function locationHashChanged() {
