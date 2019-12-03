@@ -4,6 +4,8 @@ releases = {},
 ghReleases = {},
 defaultPath = "/toggldesktop/installers",
 downloadPath = "/toggldesktop/download",
+releasesPath = "/assets/releases/releases.json",
+osUrl = "https://toggl-open-source.github.io/toggldesktop/",
 links = {
   "windows": "win",
   "windows_enterprise": "win-enterprise",
@@ -160,7 +162,7 @@ function loadSorttable() {
 
 function readJSON(path) {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', path, true);
+    xhr.open('GET', osUrl + path, true);
     xhr.responseType = 'blob';
     xhr.onload = function(e) { 
       if (this.status == 200) {
@@ -178,4 +180,4 @@ function readJSON(path) {
     xhr.send();
 }
 
-readJSON('../assets/releases/releases.json')
+readJSON(releasesPath);
