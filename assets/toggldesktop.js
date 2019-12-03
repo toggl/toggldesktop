@@ -1,5 +1,6 @@
 var os = ["mac", "win", "linux"],
- downloadUrl = "https://github.com/toggl-open-source/toggldesktop/releases/download/v";
+ downloadUrl = "https://github.com/toggl-open-source/toggldesktop/releases/download/v",
+ changelogDataFolder = "https://raw.githubusercontent.com/toggl-open-source/toggldesktop/release-flow-update/releases/data/";
 
 var loadImg = function(tab) {
   var imgs = tab.querySelectorAll("img");
@@ -121,7 +122,7 @@ var fillChangelog = function(os, json) {
 function readJSON(os) {
     var xhr = new XMLHttpRequest(),
       json;
-    xhr.open('GET', "data/" + os + ".json", true);
+    xhr.open('GET', changelogDataFolder + os + ".json", true);
     xhr.responseType = 'blob';
     xhr.onload = function(e) { 
       if (this.status == 200) {
