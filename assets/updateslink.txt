@@ -1,1 +1,0 @@
-https://toggl-open-source.github.io/toggldesktop/assets/releases/updates.json
