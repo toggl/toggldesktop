@@ -85,11 +85,35 @@ var fillChangelog = function(os, json) {
       '    <span class="beta"></span>';
     }
     
-    html += 
-      '    <a class="download-link" href="' + downloadUrl + item.version + '/TogglDesktop-' + item.version.replace(/\./g,"_") + '.dmg" title="Download ' + os + ' version ' + item.version + '">download</a>' +
-      '    <span class="date">' + item.date + '</span>' +
-      '  </h3>' +
-      '  <ul>';
+    // Generate download link for each os
+    if (os == "mac") {
+        html += 
+          '    <a class="download-link" href="' + downloadUrl + item.version + '/TogglDesktop-' + item.version.replace(/\./g,"_") + '.dmg" title="Download ' + os + ' version ' + item.version + '">download</a>' +
+          '    <span class="date">' + item.date + '</span>' +
+          '  </h3>' +
+          '  <ul>';
+    } else if (os == "win") {
+        html += 
+          '    <a class="download-link" href="' + downloadUrl + item.version + '/TogglDesktopInstaller-' + item.version + '.exe" title="Download ' + os + ' version ' + item.version + '">download</a>' 
+          if (item.has64bit) {
+            html += '    <a class="download-link" href="' + downloadUrl + item.version + '/TogglDesktopInstaller-x64-' + item.version + '.exe" title="Download win 64-bit version ' + item.version + '">64-bit</a>'
+          }
+          html += '    <span class="date">' + item.date + '</span>' +
+          '  </h3>' +
+          '  <ul>';
+    } else if (os == "linux") {
+        html += 
+          '    <a class="download-link" href="' + downloadUrl + item.version + '/toggldesktop_linux_x86_64-' + item.version.replace(/\./g,"_") + '.tar.gz" title="Download linux tarball version ' + item.version + '">tar.gz</a>'
+        html += 
+          '    <a class="download-link" href="' + downloadUrl + item.version + '/toggldesktop_' + item.version + '_amd64.deb" title="Download linux deb version ' + item.version + '">deb64</a>'
+        html +=
+          '    <span class="date">' + item.date + '</span>' +
+          '  </h3>' +
+          '  <ul>';
+    }
+
+    // if (os ==) {}
+
 
     for (var j = 0; j < item.rows.length; j++) {
       html += '<li>' + item.rows[j] + '</li>';
