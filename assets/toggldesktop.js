@@ -84,9 +84,9 @@ var fillChangelog = function(os, json) {
       html += 
       '    <span class="beta"></span>';
     }
-
+    
     html += 
-      '    <a class="download-link" href="' + downloadUrl + item.version + '/TogglDesktop-' + item.version.replace('.','_') + '.dmg" title="Download ' + os + ' version ' + item.version + '">download</a>' +
+      '    <a class="download-link" href="' + downloadUrl + item.version + '/TogglDesktop-' + item.version.replace(/\./g,"_") + '.dmg" title="Download ' + os + ' version ' + item.version + '">download</a>' +
       '    <span class="date">' + item.date + '</span>' +
       '  </h3>' +
       '  <ul>';
