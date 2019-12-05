@@ -1,6 +1,6 @@
 var os = ["mac", "win", "linux"],
  downloadUrl = "https://github.com/toggl-open-source/toggldesktop/releases/download/v",
- changelogDataFolder = "https://raw.githubusercontent.com/toggl-open-source/toggldesktop/release-flow-update/releases/data/";
+ changelogDataFolder = "https://raw.githubusercontent.com/toggl-open-source/toggldesktop/master/releases/data/";
 
 var loadImg = function(tab) {
   var imgs = tab.querySelectorAll("img");
