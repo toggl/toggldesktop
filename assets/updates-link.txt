@@ -1,1 +1,1 @@
-https://raw.githubusercontent.com/toggl-open-source/toggldesktop/release-flow-update/releases/updates.json
+https://raw.githubusercontent.com/toggl-open-source/toggldesktop/master/releases/updates.json
