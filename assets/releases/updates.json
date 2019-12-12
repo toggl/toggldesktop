@@ -1,9 +1,9 @@
 {
     "win": {
         "dev": {
-            "version": "7.4.1092",
-            "windows": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1092/TogglDesktopInstaller-7.4.1092.exe",
-            "windows64": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1092/TogglDesktopInstaller-x64-7.4.1092.exe"
+            "version": "7.4.1108",
+            "windows": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1108/TogglDesktopInstaller-7.4.1108.exe",
+            "windows64": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1108/TogglDesktopInstaller-x64-7.4.1108.exe"
         },
         "beta": {
             "version": "7.4.1092",
@@ -11,23 +11,23 @@
             "windows64": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1092/TogglDesktopInstaller-x64-7.4.1092.exe"
         },
         "stable": {
-            "version": "7.4.1023",
-            "windows": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1023/TogglDesktopInstaller-7.4.1023.exe",
-            "windows64": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1023/TogglDesktopInstaller-x64-7.4.1023.exe"
+            "version": "7.4.1092",
+            "windows": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1092/TogglDesktopInstaller-7.4.1092.exe",
+            "windows64": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1092/TogglDesktopInstaller-x64-7.4.1092.exe"
         }
     },
     "mac": {
         "dev": {
-            "version": "7.4.1080",
-            "macos": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1080/TogglDesktop-7_4_1080.dmg"
+            "version": "7.4.1106",
+            "macos": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1106/TogglDesktop-7_4_1106.dmg"
         },
         "beta": {
-            "version": "7.4.1080",
-            "macos": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1080/TogglDesktop-7_4_1080.dmg"
+            "version": "7.4.1092",
+            "macos": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1092/TogglDesktop-7_4_1092.dmg"
         },
         "stable": {
-            "version": "7.4.1041",
-            "macos": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1041/TogglDesktop-7_4_1041.dmg"
+            "version": "7.4.1092",
+            "macos": "https://github.com/toggl-open-source/toggldesktop/releases/download/v7.4.1092/TogglDesktop-7_4_1092.dmg"
         }
     },
     "linux": {
