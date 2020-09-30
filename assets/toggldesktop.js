@@ -1,4 +1,5 @@
 var os = ["mac", "win", "linux"],
+ releaseUrl = "https://github.com/toggl-open-source/toggldesktop/releases/tag/v"
  downloadUrl = "https://github.com/toggl-open-source/toggldesktop/releases/download/v",
  changelogDataFolder = "https://toggl-open-source.github.io/toggldesktop/assets/changelog/";
 
@@ -106,6 +107,8 @@ var fillChangelog = function(os, json) {
         '    <a class="download-link" href="' + downloadUrl + item.version + '/toggldesktop_linux_' + item.version + '_x86_64.tar.gz" title="Download linux tarball version ' + item.version + '">tar.gz</a>'
         html += 
           '    <a class="download-link" href="' + downloadUrl + item.version + '/toggldesktop_' + item.version + '_ubuntu1604_amd64.deb" title="Download linux deb version ' + item.version + '">deb 64-bit</a>'
+        html +=
+        '    <a class="download-link" href="' + releaseUrl + item.version + '" title="See all packages for version ' + item.version + '">GitHub</a>'
         html +=
           '    <span class="date">' + item.date + '</span>' +
           '  </h3>' +
