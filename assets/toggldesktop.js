@@ -103,9 +103,9 @@ var fillChangelog = function(os, json) {
           '  <ul>';
     } else if (os == "linux") {
         html += 
-          '    <a class="download-link" href="' + downloadUrl + item.version + '/toggldesktop_linux_x86_64-' + item.version.replace(/\./g,"_") + '.tar.gz" title="Download linux tarball version ' + item.version + '">tar.gz</a>'
+        '    <a class="download-link" href="' + downloadUrl + item.version + '/toggldesktop_linux_' + item.version + '_x86_64.tar.gz" title="Download linux tarball version ' + item.version + '">tar.gz</a>'
         html += 
-          '    <a class="download-link" href="' + downloadUrl + item.version + '/toggldesktop_' + item.version + '_amd64.deb" title="Download linux deb version ' + item.version + '">deb 64-bit</a>'
+          '    <a class="download-link" href="' + downloadUrl + item.version + '/toggldesktop_' + item.version + '_ubuntu1604_amd64.deb" title="Download linux deb version ' + item.version + '">deb 64-bit</a>'
         html +=
           '    <span class="date">' + item.date + '</span>' +
           '  </h3>' +
